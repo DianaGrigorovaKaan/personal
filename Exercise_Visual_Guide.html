@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercise Guide - Strong By Summer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f6;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --accent: #e94560;
+    --blue: #0f3460;
+    --green: #2e7d32;
+    --warm: #ff6f00;
+    --border: #e5e7eb;
+    --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    padding: 24px 16px 80px;
+  }
+
+  .header {
+    text-align: center;
+    padding: 32px 0 24px;
+  }
+  .header h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--text);
+    letter-spacing: -0.5px;
+  }
+  .header p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 6px;
+  }
+
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 36px 0 16px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-title.warmup { background: var(--green); }
+  .section-title.upper { background: var(--blue); }
+  .section-title.fullbody { background: var(--accent); }
+  .section-title.mobility { background: var(--warm); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px 10px;
+  }
+
+  .card-top svg {
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #f3f4f6;
+  }
+
+  .card-top .info h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+  .card-top .info .sets {
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .card-desc {
+    padding: 0 16px 14px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .phase-note {
+    max-width: 720px;
+    margin: 8px auto 0;
+    padding: 10px 16px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .legend {
+    max-width: 720px;
+    margin: 16px auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .legend span {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+  }
+
+  @media (max-width: 500px) {
+    .grid { grid-template-columns: 1fr; }
+    .card-top svg { width: 90px; height: 90px; }
+  }
+
+  @media print {
+    body { padding: 8px; background: white; }
+    .card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+    .section-title { break-before: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>EXERCISE GUIDE</h1>
+  <p>Visual reference for every exercise in your program</p>
+</div>
+
+<div class="legend">
+  <span style="background:var(--green)">Warm-up / Cool-down</span>
+  <span style="background:var(--blue)">Upper Body (Day A)</span>
+  <span style="background:var(--accent)">Full Body (Day B)</span>
+  <span style="background:var(--warm)">Mobility + Core (Day M)</span>
+</div>
+
+<script>
+// All exercises with SVG stick-figure illustrations
+const exercises = [
+
+// ===== WARM-UP =====
+{
+  section: "WARM-UP & COOL-DOWN",
+  sectionClass: "warmup",
+  items: [
+    {
+      name: "Ankle Circles",
+      sets: "10 each way per foot",
+      desc: "Sit on a chair. Lift one foot off the floor. Rotate your ankle in slow circles, 10 one way then 10 the other. Switch feet.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <!-- chair -->
+        <rect x="25" y="60" width="40" height="5" rx="2" fill="#bbb"/>
+        <line x1="28" y1="65" x2="28" y2="95" stroke="#bbb" stroke-width="3"/>
+        <line x1="62" y1="65" x2="62" y2="95" stroke="#bbb" stroke-width="3"/>
+        <line x1="25" y1="40" x2="25" y2="65" stroke="#bbb" stroke-width="3"/>
+        <!-- person sitting -->
+        <circle cx="45" cy="30" r="8" fill="#1a1a2e"/>
+        <line x1="45" y1="38" x2="45" y2="60" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="45" y1="60" x2="55" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="55" y1="72" x2="65" y2="80" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="45" y1="60" x2="35" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="35" y1="72" x2="35" y2="85" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms resting -->
+        <line x1="45" y1="44" x2="35" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="45" y1="44" x2="55" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- circle arrow at foot -->
+        <circle cx="70" cy="82" r="10" fill="none" stroke="#e94560" stroke-width="1.5" stroke-dasharray="3 2"/>
+        <polygon points="80,80 78,85 76,79" fill="#e94560"/>
+      </svg>`
+    },
+    {
+      name: "Seated Knee Extensions",
+      sets: "10 per leg",
+      desc: "Sit tall on a chair. Straighten one leg out in front until it is fully extended. Hold 2 seconds at the top, then lower slowly. Alternate legs.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <rect x="20" y="60" width="40" height="5" rx="2" fill="#bbb"/>
+        <line x1="23" y1="65" x2="23" y2="95" stroke="#bbb" stroke-width="3"/>
+        <line x1="57" y1="65" x2="57" y2="95" stroke="#bbb" stroke-width="3"/>
+        <line x1="20" y1="40" x2="20" y2="65" stroke="#bbb" stroke-width="3"/>
+        <circle cx="40" cy="30" r="8" fill="#1a1a2e"/>
+        <line x1="40" y1="38" x2="40" y2="60" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="40" y1="60" x2="55" y2="68" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- extended leg -->
+        <line x1="55" y1="68" x2="95" y2="62" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <!-- other leg normal -->
+        <line x1="40" y1="60" x2="32" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="32" y1="72" x2="32" y2="88" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="40" y1="44" x2="32" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="40" y1="44" x2="48" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- arrow showing extension -->
+        <path d="M80,55 L92,55" stroke="#e94560" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+        <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Cat-Cow",
+      sets: "10 reps",
+      desc: "On all fours (hands under shoulders, knees under hips). Inhale: arch your back, look up (cow). Exhale: round your back, tuck chin (cat). Move slowly with your breath.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <!-- cow (arched) top -->
+        <circle cx="85" cy="28" r="6" fill="#1a1a2e"/>
+        <path d="M80,33 Q65,52 50,42" stroke="#1a1a2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <line x1="80" y1="36" x2="80" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="50" y1="42" x2="50" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="95" y="40" font-size="8" fill="#2e7d32" font-family="sans-serif">COW</text>
+        <!-- cat (rounded) bottom -->
+        <circle cx="85" cy="72" r="6" fill="#1a1a2e"/>
+        <path d="M80,77 Q65,62 50,75" stroke="#1a1a2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <line x1="80" y1="80" x2="80" y2="98" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="50" y1="75" x2="50" y2="98" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="95" y="82" font-size="8" fill="#e94560" font-family="sans-serif">CAT</text>
+        <!-- floor -->
+        <line x1="15" y1="55" x2="90" y2="55" stroke="#ddd" stroke-width="0.5" stroke-dasharray="3"/>
+        <line x1="15" y1="98" x2="90" y2="98" stroke="#ddd" stroke-width="0.5" stroke-dasharray="3"/>
+      </svg>`
+    },
+    {
+      name: "Shoulder Circles",
+      sets: "10 each way",
+      desc: "Stand or sit. Lift your shoulders up toward your ears, roll them back, down, and forward in big slow circles. Reverse direction after 10.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="60" cy="30" r="9" fill="#1a1a2e"/>
+        <line x1="60" y1="39" x2="60" y2="75" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="75" x2="50" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="75" x2="70" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="46" x2="42" y2="60" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="46" x2="78" y2="60" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- circle arrows on shoulders -->
+        <circle cx="42" cy="44" r="9" fill="none" stroke="#e94560" stroke-width="1.5" stroke-dasharray="3 2"/>
+        <polygon points="50,39 48,46 45,40" fill="#e94560"/>
+        <circle cx="78" cy="44" r="9" fill="none" stroke="#e94560" stroke-width="1.5" stroke-dasharray="3 2"/>
+        <polygon points="86,39 84,46 81,40" fill="#e94560"/>
+      </svg>`
+    },
+    {
+      name: "Wall Slides",
+      sets: "8 reps",
+      desc: "Stand with your back flat against a wall. Arms in a \"goalpost\" shape (elbows bent 90 degrees at shoulder height). Slide arms up overhead, then back down. Keep contact with the wall.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <!-- wall -->
+        <rect x="18" y="5" width="5" height="110" fill="#ddd"/>
+        <!-- person against wall -->
+        <circle cx="35" cy="22" r="8" fill="#1a1a2e"/>
+        <line x1="33" y1="30" x2="30" y2="65" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="30" y1="65" x2="33" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="30" y1="65" x2="27" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms low position -->
+        <line x1="32" y1="38" x2="26" y2="38" stroke="#bbb" stroke-width="2" stroke-linecap="round"/>
+        <line x1="26" y1="38" x2="26" y2="52" stroke="#bbb" stroke-width="2" stroke-linecap="round"/>
+        <line x1="32" y1="38" x2="43" y2="38" stroke="#bbb" stroke-width="2" stroke-linecap="round"/>
+        <line x1="43" y1="38" x2="43" y2="52" stroke="#bbb" stroke-width="2" stroke-linecap="round"/>
+        <!-- person 2 arms up -->
+        <circle cx="80" cy="22" r="8" fill="#1a1a2e"/>
+        <line x1="78" y1="30" x2="75" y2="65" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="75" y1="65" x2="78" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="75" y1="65" x2="72" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms high -->
+        <line x1="78" y1="38" x2="68" y2="35" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="68" y1="35" x2="66" y2="18" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="78" y1="38" x2="88" y2="35" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="88" y1="35" x2="90" y2="18" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- wall 2 -->
+        <rect x="63" y="5" width="5" height="110" fill="#ddd"/>
+        <!-- arrow -->
+        <path d="M45,28 L60,28" stroke="#e94560" stroke-width="1.5" marker-end="url(#a2)"/>
+        <defs><marker id="a2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Child's Pose",
+      sets: "Hold 30 seconds",
+      desc: "Kneel on the mat, sit your hips back toward your heels, reach your arms forward on the floor. Knees can be wide apart. Breathe deeply into your back. A resting stretch.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <line x1="10" y1="90" x2="110" y2="90" stroke="#ddd" stroke-width="1"/>
+        <!-- curled up body -->
+        <circle cx="72" cy="62" r="7" fill="#1a1a2e"/>
+        <path d="M72,69 Q72,82 82,85" stroke="#1a1a2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- hips up -->
+        <path d="M82,85 Q90,78 92,88" stroke="#1a1a2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- legs tucked -->
+        <line x1="92" y1="88" x2="88" y2="90" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms reaching forward -->
+        <line x1="68" y1="72" x2="30" y2="82" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="68" y1="74" x2="28" y2="86" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- floor mat -->
+        <rect x="20" y="89" width="80" height="3" rx="1" fill="#2e7d32" opacity="0.3"/>
+      </svg>`
+    },
+    {
+      name: "Doorway Chest Stretch",
+      sets: "20 sec per side",
+      desc: "Stand in a doorway. Place one arm on the doorframe with elbow bent at 90 degrees (like a goalpost). Step through the door gently until you feel a stretch across your chest. Switch sides.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <!-- doorframe -->
+        <rect x="45" y="5" width="4" height="115" fill="#bbb"/>
+        <!-- person stepping through -->
+        <circle cx="62" cy="25" r="8" fill="#1a1a2e"/>
+        <line x1="62" y1="33" x2="62" y2="65" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="62" y1="65" x2="55" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="62" y1="65" x2="70" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arm on frame -->
+        <line x1="60" y1="42" x2="49" y2="35" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="49" y1="35" x2="49" y2="18" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- other arm hanging -->
+        <line x1="62" y1="42" x2="72" y2="58" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- stretch indicator -->
+        <path d="M54,38 Q58,30 54,22" stroke="#2e7d32" stroke-width="1" fill="none" stroke-dasharray="2"/>
+      </svg>`
+    },
+  ]
+},
+
+// ===== UPPER BODY =====
+{
+  section: "UPPER BODY EXERCISES (Day A)",
+  sectionClass: "upper",
+  items: [
+    {
+      name: "Wall Push-Ups",
+      sets: "3 x 8-10",
+      desc: "Face a wall, hands at shoulder height and shoulder-width apart. Lean in slowly (3 seconds), push back. Keep your body in a straight line from head to heels. Like a push-up but standing.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <rect x="85" y="5" width="5" height="110" fill="#bbb"/>
+        <circle cx="50" cy="25" r="8" fill="#1a1a2e"/>
+        <line x1="52" y1="33" x2="58" y2="65" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="58" y1="65" x2="62" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="58" y1="65" x2="54" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms to wall -->
+        <line x1="54" y1="42" x2="85" y2="35" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="54" y1="42" x2="85" y2="48" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="85" cy="35" r="2" fill="#e94560"/>
+        <circle cx="85" cy="48" r="2" fill="#e94560"/>
+        <!-- arrow showing lean -->
+        <path d="M65,20 L78,20" stroke="#e94560" stroke-width="1.5" marker-end="url(#aw)"/>
+        <defs><marker id="aw" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Seated Dumbbell Press",
+      sets: "3 x 8-10",
+      desc: "Sit on a chair with back straight. Hold a dumbbell in each hand at shoulder height. Press both up overhead until arms are straight, then lower slowly back to shoulders.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <rect x="25" y="62" width="35" height="5" rx="2" fill="#bbb"/>
+        <line x1="28" y1="67" x2="28" y2="95" stroke="#bbb" stroke-width="3"/>
+        <line x1="57" y1="67" x2="57" y2="95" stroke="#bbb" stroke-width="3"/>
+        <line x1="25" y1="42" x2="25" y2="67" stroke="#bbb" stroke-width="3"/>
+        <circle cx="42" cy="30" r="8" fill="#1a1a2e"/>
+        <line x1="42" y1="38" x2="42" y2="62" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="42" y1="62" x2="50" y2="80" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="42" y1="62" x2="34" y2="80" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms pressing up -->
+        <line x1="42" y1="45" x2="30" y2="38" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="30" y1="38" x2="28" y2="15" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="42" y1="45" x2="54" y2="38" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="54" y1="38" x2="56" y2="15" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- dumbbells -->
+        <rect x="22" y="10" width="12" height="5" rx="2" fill="#0f3460"/>
+        <rect x="50" y="10" width="12" height="5" rx="2" fill="#0f3460"/>
+        <!-- arrow -->
+        <path d="M70,50 L70,20" stroke="#e94560" stroke-width="1.5" marker-end="url(#ap)"/>
+        <defs><marker id="ap" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Seated Dumbbell Rows",
+      sets: "3 x 10 per arm",
+      desc: "Sit on edge of chair, lean forward at the hips. Hold dumbbell in one hand, let arm hang. Pull the dumbbell up to your hip, squeezing your shoulder blade back. Lower slowly. Switch arms.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <rect x="20" y="55" width="35" height="5" rx="2" fill="#bbb"/>
+        <line x1="23" y1="60" x2="23" y2="90" stroke="#bbb" stroke-width="3"/>
+        <line x1="52" y1="60" x2="52" y2="90" stroke="#bbb" stroke-width="3"/>
+        <circle cx="55" cy="28" r="7" fill="#1a1a2e"/>
+        <!-- leaning forward torso -->
+        <line x1="53" y1="35" x2="42" y2="55" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="42" y1="55" x2="35" y2="75" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="42" y1="55" x2="48" y2="75" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- rowing arm -->
+        <line x1="48" y1="42" x2="58" y2="52" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="58" y1="52" x2="62" y2="42" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="58" y="38" width="8" height="5" rx="2" fill="#0f3460"/>
+        <!-- other arm resting on knee -->
+        <line x1="48" y1="42" x2="38" y2="52" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- arrow up -->
+        <path d="M75,60 L75,38" stroke="#e94560" stroke-width="1.5" marker-end="url(#ar)"/>
+        <defs><marker id="ar" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+        <text x="78" y="50" font-size="7" fill="#e94560" font-family="sans-serif">PULL</text>
+      </svg>`
+    },
+    {
+      name: "Bicep Curls",
+      sets: "3 x 10",
+      desc: "Stand with feet hip-width, a dumbbell in each hand, palms facing forward. Bend your elbows to curl the weights up to your shoulders. Lower slowly (3 seconds down). No swinging your body.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="60" cy="18" r="8" fill="#1a1a2e"/>
+        <line x1="60" y1="26" x2="60" y2="65" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="65" x2="52" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="65" x2="68" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- left arm (down) -->
+        <line x1="60" y1="35" x2="45" y2="48" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="45" y1="48" x2="43" y2="65" stroke="#bbb" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="39" y="63" width="8" height="5" rx="2" fill="#0f3460"/>
+        <!-- right arm (curled up) -->
+        <line x1="60" y1="35" x2="75" y2="48" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="75" y1="48" x2="72" y2="32" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="68" y="27" width="8" height="5" rx="2" fill="#0f3460"/>
+        <!-- curl arrow -->
+        <path d="M82,60 Q88,45 82,30" stroke="#e94560" stroke-width="1.5" fill="none" marker-end="url(#ac)"/>
+        <defs><marker id="ac" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Tricep Kickbacks",
+      sets: "3 x 10 per arm",
+      desc: "Lean forward, one hand on chair for support. Hold dumbbell in the other hand, upper arm parallel to floor. Extend your forearm straight back, squeezing at the top. Slowly return. The upper arm stays still.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <!-- chair for support -->
+        <rect x="15" y="55" width="25" height="4" rx="2" fill="#bbb"/>
+        <line x1="18" y1="59" x2="18" y2="85" stroke="#bbb" stroke-width="2"/>
+        <line x1="37" y1="59" x2="37" y2="85" stroke="#bbb" stroke-width="2"/>
+        <!-- person leaning -->
+        <circle cx="55" cy="30" r="7" fill="#1a1a2e"/>
+        <line x1="53" y1="37" x2="62" y2="60" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="62" y1="60" x2="58" y2="90" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="62" y1="60" x2="66" y2="90" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- support arm -->
+        <line x1="55" y1="44" x2="38" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- kickback arm -->
+        <line x1="57" y1="44" x2="70" y2="44" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="70" y1="44" x2="95" y2="40" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="92" y="37" width="8" height="5" rx="2" fill="#0f3460"/>
+        <!-- arrow -->
+        <path d="M80,34 L92,32" stroke="#e94560" stroke-width="1.5" fill="none" marker-end="url(#ak)"/>
+        <defs><marker id="ak" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Lateral Raises",
+      sets: "3 x 10-12",
+      desc: "Stand tall, dumbbell in each hand by your sides. Lift both arms out to the sides until they reach shoulder height (like a T shape). Lower slowly. This shapes the rounded shoulder cap.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="60" cy="22" r="8" fill="#1a1a2e"/>
+        <line x1="60" y1="30" x2="60" y2="68" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="68" x2="52" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="68" x2="68" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms out to sides -->
+        <line x1="60" y1="38" x2="28" y2="38" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="38" x2="92" y2="38" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- dumbbells -->
+        <rect x="20" y="35" width="10" height="5" rx="2" fill="#0f3460"/>
+        <rect x="90" y="35" width="10" height="5" rx="2" fill="#0f3460"/>
+        <!-- arrows -->
+        <path d="M42,50 Q35,44 28,44" stroke="#e94560" stroke-width="1" fill="none" marker-end="url(#al)"/>
+        <path d="M78,50 Q85,44 92,44" stroke="#e94560" stroke-width="1" fill="none" marker-end="url(#al)"/>
+        <defs><marker id="al" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Overhead Tricep Extension",
+      sets: "3 x 10",
+      desc: "Hold ONE dumbbell with both hands behind your head, elbows pointing up. Extend arms to lift the weight straight up over your head. Lower slowly behind head. Elbows stay close to your ears.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="60" cy="32" r="8" fill="#1a1a2e"/>
+        <line x1="60" y1="40" x2="60" y2="75" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="75" x2="52" y2="105" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="75" x2="68" y2="105" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms up, hands behind head -->
+        <line x1="60" y1="46" x2="52" y2="30" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="52" y1="30" x2="55" y2="12" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="46" x2="68" y2="30" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="68" y1="30" x2="65" y2="12" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- dumbbell on top -->
+        <rect x="52" y="8" width="16" height="5" rx="2" fill="#0f3460"/>
+        <!-- arrow -->
+        <path d="M78,25 L78,12" stroke="#e94560" stroke-width="1.5" fill="none" marker-end="url(#ao)"/>
+        <defs><marker id="ao" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Hammer Curls",
+      sets: "3 x 10",
+      desc: "Like bicep curls but palms face EACH OTHER (thumbs up) instead of forward. This targets a different part of the bicep and the forearm. Slow on the way down (4 seconds).",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="60" cy="20" r="8" fill="#1a1a2e"/>
+        <line x1="60" y1="28" x2="60" y2="65" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="65" x2="52" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="65" x2="68" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- right arm curling -->
+        <line x1="60" y1="36" x2="74" y2="46" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="46" x2="72" y2="30" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- dumbbell VERTICAL (hammer grip) -->
+        <rect x="70" y="22" width="5" height="10" rx="2" fill="#0f3460"/>
+        <!-- left arm down -->
+        <line x1="60" y1="36" x2="46" y2="46" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="46" y1="46" x2="44" y2="64" stroke="#bbb" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="42" y="62" width="5" height="10" rx="2" fill="#0f3460"/>
+        <!-- thumbs up indicator -->
+        <text x="82" y="34" font-size="7" fill="#0f3460" font-family="sans-serif">thumbs</text>
+        <text x="85" y="42" font-size="7" fill="#0f3460" font-family="sans-serif">up!</text>
+      </svg>`
+    },
+    {
+      name: "Dumbbell Shrugs",
+      sets: "3 x 12-15",
+      desc: "Stand tall holding dumbbells at your sides. Shrug your shoulders UP toward your ears as high as possible. Hold 2 seconds at the top. Lower slowly. Builds the upper back and trap muscles.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="60" cy="20" r="8" fill="#1a1a2e"/>
+        <line x1="60" y1="28" x2="60" y2="68" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="68" x2="52" y2="102" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="68" x2="68" y2="102" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- shoulders raised -->
+        <line x1="60" y1="34" x2="42" y2="28" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <line x1="42" y1="28" x2="40" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="34" x2="78" y2="28" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <line x1="78" y1="28" x2="80" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- dumbbells -->
+        <rect x="36" y="53" width="8" height="5" rx="2" fill="#0f3460"/>
+        <rect x="76" y="53" width="8" height="5" rx="2" fill="#0f3460"/>
+        <!-- up arrows -->
+        <path d="M38,22 L38,14" stroke="#e94560" stroke-width="1.5" marker-end="url(#as)"/>
+        <path d="M82,22 L82,14" stroke="#e94560" stroke-width="1.5" marker-end="url(#as)"/>
+        <defs><marker id="as" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Bent-Over Rows (Two Arm)",
+      sets: "3 x 12",
+      desc: "Stand with feet hip-width, hinge forward at hips (back flat, slight knee bend). Let dumbbells hang below shoulders. Pull both up to your lower ribs. Squeeze shoulder blades together. Lower slowly.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <!-- person bent over -->
+        <circle cx="40" cy="28" r="7" fill="#1a1a2e"/>
+        <line x1="42" y1="35" x2="65" y2="52" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="65" y1="52" x2="60" y2="85" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="65" y1="52" x2="72" y2="85" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms rowing up -->
+        <line x1="50" y1="42" x2="48" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="48" y1="55" x2="52" y2="48" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="48" y="44" width="8" height="4" rx="1.5" fill="#0f3460"/>
+        <line x1="55" y1="45" x2="58" y2="58" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="58" y1="58" x2="62" y2="50" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="58" y="47" width="8" height="4" rx="1.5" fill="#0f3460"/>
+        <!-- arrow -->
+        <path d="M80,62 L80,46" stroke="#e94560" stroke-width="1.5" fill="none" marker-end="url(#abr)"/>
+        <defs><marker id="abr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+  ]
+},
+
+// ===== FULL BODY =====
+{
+  section: "FULL BODY EXERCISES (Day B)",
+  sectionClass: "fullbody",
+  items: [
+    {
+      name: "Chair-Assisted Squat",
+      sets: "3 x 8-10",
+      desc: "Stand in front of a chair, feet shoulder-width. Lower your hips back and down as if sitting, barely touch the chair, then stand back up. Keep weight in your heels. Go only as deep as comfortable for your knees.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <rect x="55" y="65" width="35" height="5" rx="2" fill="#bbb"/>
+        <line x1="58" y1="70" x2="58" y2="100" stroke="#bbb" stroke-width="3"/>
+        <line x1="87" y1="70" x2="87" y2="100" stroke="#bbb" stroke-width="3"/>
+        <line x1="87" y1="45" x2="87" y2="70" stroke="#bbb" stroke-width="3"/>
+        <!-- person squatting -->
+        <circle cx="50" cy="28" r="8" fill="#1a1a2e"/>
+        <line x1="50" y1="36" x2="50" y2="58" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="50" y1="58" x2="40" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="40" y1="72" x2="38" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="50" y1="58" x2="60" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="72" x2="62" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms forward for balance -->
+        <line x1="50" y1="42" x2="35" y2="44" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="50" y1="42" x2="38" y2="48" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- arrow down/up -->
+        <path d="M20,40 L20,60" stroke="#e94560" stroke-width="1.5" marker-end="url(#asq)"/>
+        <path d="M25,60 L25,40" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#asq2)"/>
+        <defs>
+          <marker id="asq" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker>
+          <marker id="asq2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#2e7d32"/></marker>
+        </defs>
+      </svg>`
+    },
+    {
+      name: "Romanian Deadlift (RDL)",
+      sets: "3 x 10-12",
+      desc: "Stand with dumbbells in front of your thighs, slight knee bend. Hinge at the hips and slide the dumbbells down along your legs. Feel the stretch in the back of your thighs. Stand back up by squeezing your glutes. Back stays FLAT throughout.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <!-- standing position (ghost) -->
+        <circle cx="30" cy="18" r="6" fill="#ccc"/>
+        <line x1="30" y1="24" x2="30" y2="52" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+        <line x1="30" y1="52" x2="26" y2="80" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+        <line x1="30" y1="52" x2="34" y2="80" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+        <!-- hinged position -->
+        <circle cx="65" cy="30" r="7" fill="#1a1a2e"/>
+        <line x1="67" y1="37" x2="80" y2="52" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="80" y1="52" x2="76" y2="85" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="80" y1="52" x2="84" y2="85" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms hanging with dumbbells -->
+        <line x1="72" y1="42" x2="68" y2="62" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="75" y1="44" x2="72" y2="64" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="64" y="60" width="8" height="4" rx="1.5" fill="#0f3460"/>
+        <rect x="68" y="62" width="8" height="4" rx="1.5" fill="#0f3460"/>
+        <!-- flat back line -->
+        <line x1="60" y1="34" x2="82" y2="50" stroke="#2e7d32" stroke-width="1" stroke-dasharray="3"/>
+        <text x="62" y="28" font-size="7" fill="#2e7d32" font-family="sans-serif">flat back!</text>
+      </svg>`
+    },
+    {
+      name: "Reverse Lunges",
+      sets: "3 x 8 per leg",
+      desc: "Stand tall. Step ONE foot BACKWARD, lower until back knee is near the floor, then push through the front foot to return to standing. Stepping backward is much easier on the knees than forward lunges. Hold chair for balance if needed.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="55" cy="18" r="7" fill="#1a1a2e"/>
+        <line x1="55" y1="25" x2="55" y2="52" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- front leg (bent) -->
+        <line x1="55" y1="52" x2="48" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="48" y1="72" x2="45" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- back leg (extended back) -->
+        <line x1="55" y1="52" x2="72" y2="68" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="72" y1="68" x2="88" y2="82" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms -->
+        <line x1="55" y1="35" x2="45" y2="48" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="55" y1="35" x2="65" y2="48" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- arrow showing step back -->
+        <path d="M72,90 L86,86" stroke="#e94560" stroke-width="1.5" fill="none" marker-end="url(#arl)"/>
+        <text x="68" y="100" font-size="7" fill="#e94560" font-family="sans-serif">step back</text>
+        <defs><marker id="arl" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Goblet Squat",
+      sets: "3 x 10-12",
+      desc: "Hold ONE dumbbell vertically at your chest with both hands (like holding a goblet). Squat down, keeping chest up and elbows between your knees. Stand back up. The weight helps you balance.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="60" cy="18" r="8" fill="#1a1a2e"/>
+        <line x1="60" y1="26" x2="60" y2="52" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- squatting legs -->
+        <line x1="60" y1="52" x2="45" y2="68" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="45" y1="68" x2="42" y2="92" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="52" x2="75" y2="68" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="75" y1="68" x2="78" y2="92" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms holding dumbbell at chest -->
+        <line x1="60" y1="35" x2="52" y2="40" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="52" y1="40" x2="55" y2="44" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="35" x2="68" y2="40" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="68" y1="40" x2="65" y2="44" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- dumbbell at chest -->
+        <rect x="55" y="36" width="10" height="10" rx="2" fill="#0f3460"/>
+        <text x="57" y="43" font-size="6" fill="white" font-family="sans-serif">DB</text>
+      </svg>`
+    },
+    {
+      name: "Calf Raises",
+      sets: "3 x 15",
+      desc: "Stand near a chair (for balance). Rise up on your toes as high as you can. Hold 1 second at the top. Lower slowly (3 seconds). Builds calf muscles and helps stabilize your knees.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <line x1="15" y1="95" x2="105" y2="95" stroke="#ddd" stroke-width="1"/>
+        <!-- person on toes -->
+        <circle cx="60" cy="18" r="8" fill="#1a1a2e"/>
+        <line x1="60" y1="26" x2="60" y2="62" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="62" x2="55" y2="82" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="55" y1="82" x2="55" y2="88" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="62" x2="65" y2="82" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="65" y1="82" x2="65" y2="88" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <!-- toes on ground, heels up -->
+        <circle cx="55" cy="90" r="2.5" fill="#1a1a2e"/>
+        <circle cx="65" cy="90" r="2.5" fill="#1a1a2e"/>
+        <!-- arrow up -->
+        <path d="M80,88 L80,75" stroke="#e94560" stroke-width="1.5" fill="none" marker-end="url(#acr)"/>
+        <text x="85" y="82" font-size="7" fill="#e94560" font-family="sans-serif">rise!</text>
+        <defs><marker id="acr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+        <!-- chair for balance -->
+        <rect x="85" y="55" width="20" height="4" rx="2" fill="#bbb"/>
+        <line x1="88" y1="59" x2="88" y2="95" stroke="#bbb" stroke-width="2"/>
+        <!-- hand on chair -->
+        <line x1="60" y1="40" x2="85" y2="55" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round" stroke-dasharray="3"/>
+      </svg>`
+    },
+    {
+      name: "Farmer's Carry / Hold",
+      sets: "3 x 20-30 sec",
+      desc: "Hold a dumbbell in each hand. Stand tall, shoulders back, squeeze everything tight. Walk short steps or just stand still and hold. Builds grip strength, posture, and total body tension.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="60" cy="18" r="8" fill="#1a1a2e"/>
+        <line x1="60" y1="26" x2="60" y2="62" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="62" x2="52" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="62" x2="68" y2="95" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms straight down with dumbbells -->
+        <line x1="60" y1="35" x2="42" y2="35" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="42" y1="35" x2="42" y2="60" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="35" x2="78" y2="35" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="78" y1="35" x2="78" y2="60" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="38" y="58" width="8" height="5" rx="2" fill="#0f3460"/>
+        <rect x="74" y="58" width="8" height="5" rx="2" fill="#0f3460"/>
+        <!-- posture lines -->
+        <line x1="60" y1="12" x2="60" y2="8" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#afc)"/>
+        <text x="68" y="10" font-size="6" fill="#2e7d32" font-family="sans-serif">stand tall!</text>
+        <defs><marker id="afc" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#2e7d32"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Dumbbell Upright Row",
+      sets: "3 x 10",
+      desc: "Stand holding dumbbells in front of thighs, palms facing your body. Pull both dumbbells straight up along your body toward your chin, leading with your elbows. Elbows go higher than hands. Lower slowly.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="60" cy="18" r="8" fill="#1a1a2e"/>
+        <line x1="60" y1="26" x2="60" y2="65" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="65" x2="52" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="65" x2="68" y2="100" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms pulling up, elbows high -->
+        <line x1="60" y1="35" x2="45" y2="30" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="45" y1="30" x2="50" y2="40" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="35" x2="75" y2="30" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="75" y1="30" x2="70" y2="40" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="46" y="38" width="8" height="4" rx="1.5" fill="#0f3460"/>
+        <rect x="66" y="38" width="8" height="4" rx="1.5" fill="#0f3460"/>
+        <!-- elbows high note -->
+        <text x="30" y="24" font-size="6" fill="#e94560" font-family="sans-serif">elbows</text>
+        <text x="33" y="31" font-size="6" fill="#e94560" font-family="sans-serif">high</text>
+        <path d="M50,36 L48,30" stroke="#e94560" stroke-width="1" fill="none" marker-end="url(#aur)"/>
+        <defs><marker id="aur" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+  ]
+},
+
+// ===== MOBILITY + CORE =====
+{
+  section: "MOBILITY + CORE (Day M)",
+  sectionClass: "mobility",
+  items: [
+    {
+      name: "Diaphragmatic Breathing",
+      sets: "3 x 8 breaths",
+      desc: "Lie on your back, knees bent, feet flat. Place one hand on your chest, one on your belly. Breathe IN through your nose so your BELLY rises (not chest). Exhale slowly through mouth. This activates your deep core.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <line x1="10" y1="85" x2="110" y2="85" stroke="#ddd" stroke-width="1"/>
+        <!-- person lying down -->
+        <circle cx="20" cy="72" r="7" fill="#1a1a2e"/>
+        <line x1="27" y1="72" x2="75" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- knees bent -->
+        <line x1="75" y1="72" x2="85" y2="58" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="85" y1="58" x2="90" y2="84" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- hand on belly -->
+        <line x1="45" y1="72" x2="50" y2="62" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="50" cy="62" r="2" fill="#e94560"/>
+        <!-- belly rising -->
+        <path d="M40,65 Q50,52 60,65" stroke="#e94560" stroke-width="1.5" fill="none" stroke-dasharray="3"/>
+        <path d="M48,55 L50,48" stroke="#e94560" stroke-width="1" marker-end="url(#adb)"/>
+        <text x="38" y="45" font-size="7" fill="#e94560" font-family="sans-serif">belly rises</text>
+        <defs><marker id="adb" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Dead Bug",
+      sets: "3 x 6-8 per side",
+      desc: "Lie on your back, arms pointing at ceiling, knees bent 90 degrees (tabletop position). Slowly extend one leg out straight while pressing your lower back INTO the floor. Return. Alternate sides. Your back must NOT arch up.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <line x1="10" y1="85" x2="110" y2="85" stroke="#ddd" stroke-width="1"/>
+        <circle cx="18" cy="72" r="7" fill="#1a1a2e"/>
+        <line x1="25" y1="72" x2="72" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- one leg up (tabletop) -->
+        <line x1="65" y1="72" x2="68" y2="58" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="68" y1="58" x2="75" y2="55" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- other leg extending out -->
+        <line x1="72" y1="72" x2="100" y2="75" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <!-- one arm up -->
+        <line x1="35" y1="72" x2="38" y2="52" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- other arm extending back -->
+        <line x1="30" y1="72" x2="15" y2="55" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- back flat note -->
+        <text x="40" y="95" font-size="7" fill="#2e7d32" font-family="sans-serif">back flat on floor!</text>
+        <path d="M40,82 L40,86" stroke="#2e7d32" stroke-width="1.5"/>
+      </svg>`
+    },
+    {
+      name: "Glute Bridge",
+      sets: "3 x 10",
+      desc: "Lie on your back, knees bent, feet flat on floor hip-width apart. Push through your heels to lift your hips up until your body makes a straight line from knees to shoulders. Squeeze glutes hard at the top for 2 seconds. Lower slowly.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <line x1="10" y1="90" x2="110" y2="90" stroke="#ddd" stroke-width="1"/>
+        <circle cx="18" cy="62" r="7" fill="#1a1a2e"/>
+        <!-- body bridged up -->
+        <line x1="25" y1="62" x2="45" y2="55" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="45" y1="55" x2="65" y2="50" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <!-- legs bent -->
+        <line x1="65" y1="50" x2="78" y2="65" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="78" y1="65" x2="82" y2="88" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- hips up arrow -->
+        <path d="M55,60 L55,45" stroke="#e94560" stroke-width="1.5" marker-end="url(#agb)"/>
+        <text x="58" y="48" font-size="7" fill="#e94560" font-family="sans-serif">hips up!</text>
+        <!-- squeeze note -->
+        <text x="45" y="105" font-size="7" fill="#2e7d32" font-family="sans-serif">squeeze glutes 2 sec</text>
+        <defs><marker id="agb" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Bird-Dog",
+      sets: "3 x 6-8 per side",
+      desc: "On all fours (hands under shoulders, knees under hips). Extend your RIGHT arm forward and LEFT leg backward at the same time. Hold 3 seconds. Return. Switch sides. Keep your back flat and hips level.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <line x1="10" y1="90" x2="110" y2="90" stroke="#ddd" stroke-width="1"/>
+        <circle cx="55" cy="40" r="7" fill="#1a1a2e"/>
+        <!-- torso horizontal -->
+        <line x1="55" y1="47" x2="55" y2="55" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="55" y1="55" x2="75" y2="55" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- grounded arm -->
+        <line x1="62" y1="55" x2="62" y2="75" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- extended arm -->
+        <line x1="55" y1="50" x2="28" y2="42" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- grounded knee -->
+        <line x1="75" y1="55" x2="72" y2="75" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- extended leg -->
+        <line x1="75" y1="55" x2="100" y2="48" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- flat back line -->
+        <line x1="30" y1="46" x2="98" y2="46" stroke="#2e7d32" stroke-width="0.8" stroke-dasharray="3"/>
+        <text x="35" y="32" font-size="7" fill="#2e7d32" font-family="sans-serif">keep level</text>
+      </svg>`
+    },
+    {
+      name: "Plank Hold",
+      sets: "3 x 15-30 sec",
+      desc: "Forearms on the mat, elbows under shoulders. Either on your knees (beginner) or toes (advanced). Body in a straight line. No sagging hips, no butt in the air. Hold and breathe. This works your ENTIRE core.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <line x1="5" y1="85" x2="115" y2="85" stroke="#ddd" stroke-width="1"/>
+        <!-- mat -->
+        <rect x="10" y="83" width="100" height="3" rx="1" fill="#ff6f00" opacity="0.2"/>
+        <!-- person in plank -->
+        <circle cx="25" cy="52" r="6" fill="#1a1a2e"/>
+        <!-- forearms on ground -->
+        <line x1="28" y1="57" x2="32" y2="68" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="32" y1="68" x2="40" y2="72" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- body straight line -->
+        <line x1="30" y1="60" x2="88" y2="62" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <!-- toes -->
+        <line x1="88" y1="62" x2="95" y2="82" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- straight line indicator -->
+        <line x1="20" y1="56" x2="95" y2="58" stroke="#2e7d32" stroke-width="0.8" stroke-dasharray="3"/>
+        <text x="50" y="50" font-size="7" fill="#2e7d32" font-family="sans-serif">straight line!</text>
+      </svg>`
+    },
+    {
+      name: "Side Plank (from knees)",
+      sets: "3 x 15 sec per side",
+      desc: "Lie on your side, forearm on the mat, elbow under shoulder, knees bent. Lift your hips off the ground until your body makes a straight line from knees to shoulders. Hold. This works your obliques (side abs) without twisting.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <line x1="10" y1="90" x2="110" y2="90" stroke="#ddd" stroke-width="1"/>
+        <circle cx="30" cy="35" r="7" fill="#1a1a2e"/>
+        <!-- forearm on ground -->
+        <line x1="30" y1="42" x2="30" y2="58" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="30" y1="58" x2="30" y2="88" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- body angled up -->
+        <line x1="30" y1="55" x2="75" y2="62" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <!-- knees bent on ground -->
+        <line x1="75" y1="62" x2="85" y2="75" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="85" y1="75" x2="78" y2="88" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- top arm on hip -->
+        <line x1="40" y1="52" x2="55" y2="55" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round"/>
+        <!-- hips up arrow -->
+        <path d="M55,72 L55,58" stroke="#e94560" stroke-width="1.5" marker-end="url(#asp)"/>
+        <defs><marker id="asp" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Wall Sit",
+      sets: "3 x 20-30 sec",
+      desc: "Stand with your back against a wall. Slide down until your thighs are approaching parallel to the floor (or as far as comfortable). Hold this position. Your knees should be above your ankles. Builds quad strength around the knee joint.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <!-- wall -->
+        <rect x="20" y="5" width="5" height="110" fill="#bbb"/>
+        <!-- person sitting against wall -->
+        <circle cx="38" cy="28" r="8" fill="#1a1a2e"/>
+        <line x1="35" y1="36" x2="30" y2="60" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- thighs parallel -->
+        <line x1="30" y1="60" x2="52" y2="60" stroke="#e94560" stroke-width="3" stroke-linecap="round"/>
+        <!-- shins vertical -->
+        <line x1="52" y1="60" x2="52" y2="90" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms -->
+        <line x1="34" y1="42" x2="28" y2="52" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="34" y1="42" x2="42" y2="52" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- 90 degree indicator -->
+        <rect x="48" y="56" width="6" height="6" fill="none" stroke="#2e7d32" stroke-width="1"/>
+        <text x="60" y="62" font-size="7" fill="#2e7d32" font-family="sans-serif">90°</text>
+      </svg>`
+    },
+    {
+      name: "Hip Flexor Stretch",
+      sets: "45 sec per side",
+      desc: "Kneel on one knee (back knee on mat), front foot flat on floor ahead of you. Keep your torso upright. Gently push your hips forward until you feel a stretch in the front of your back hip. This relieves tight hip flexors from sitting.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <rect x="10" y="92" width="100" height="3" rx="1" fill="#ff6f00" opacity="0.2"/>
+        <circle cx="55" cy="20" r="7" fill="#1a1a2e"/>
+        <line x1="55" y1="27" x2="55" y2="55" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- front leg (foot forward) -->
+        <line x1="55" y1="55" x2="42" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="42" y1="72" x2="38" y2="92" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- back leg (knee on mat) -->
+        <line x1="55" y1="55" x2="72" y2="72" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="72" y1="72" x2="82" y2="92" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- knee on ground -->
+        <circle cx="72" cy="72" r="3" fill="#ff6f00" opacity="0.5"/>
+        <!-- arms -->
+        <line x1="55" y1="38" x2="48" y2="48" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round"/>
+        <line x1="55" y1="38" x2="62" y2="48" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round"/>
+        <!-- push forward arrow -->
+        <path d="M58,60 L50,60" stroke="#e94560" stroke-width="1.5" marker-end="url(#ahf)"/>
+        <text x="28" y="58" font-size="7" fill="#e94560" font-family="sans-serif">push</text>
+        <text x="22" y="66" font-size="7" fill="#e94560" font-family="sans-serif">forward</text>
+        <defs><marker id="ahf" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+    {
+      name: "Pallof Press",
+      sets: "3 x 8 per side",
+      desc: "Stand sideways. Hold a dumbbell at your chest with both hands. Press it straight out in front of you, resisting the urge to rotate. Bring it back to chest. This trains your core to RESIST rotation, which is excellent for back health.",
+      svg: `<svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#f3f4f6" rx="10"/>
+        <circle cx="45" cy="20" r="8" fill="#1a1a2e"/>
+        <line x1="45" y1="28" x2="45" y2="65" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="45" y1="65" x2="38" y2="98" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="45" y1="65" x2="52" y2="98" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+        <!-- arms pressing out -->
+        <line x1="45" y1="40" x2="55" y2="40" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="55" y1="40" x2="85" y2="40" stroke="#e94560" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="82" y="36" width="10" height="8" rx="2" fill="#0f3460"/>
+        <!-- press arrow -->
+        <path d="M65,32 L82,32" stroke="#e94560" stroke-width="1.5" fill="none" marker-end="url(#apf)"/>
+        <text x="68" y="28" font-size="7" fill="#e94560" font-family="sans-serif">press out</text>
+        <!-- no rotation note -->
+        <text x="30" y="108" font-size="7" fill="#2e7d32" font-family="sans-serif">resist twisting!</text>
+        <defs><marker id="apf" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e94560"/></marker></defs>
+      </svg>`
+    },
+  ]
+}
+];
+
+// Render everything
+const container = document.createElement('div');
+container.id = 'app';
+
+exercises.forEach(section => {
+  const sTitle = document.createElement('div');
+  sTitle.className = `section-title ${section.sectionClass}`;
+  sTitle.textContent = section.section;
+  container.appendChild(sTitle);
+
+  if (section.sectionClass === 'mobility') {
+    const note = document.createElement('div');
+    note.className = 'phase-note';
+    note.textContent = 'All core exercises here are C-section safe. No crunches, no sit-ups.';
+    container.appendChild(note);
+  }
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+
+  section.items.forEach(ex => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-top">
+        ${ex.svg}
+        <div class="info">
+          <h3>${ex.name}</h3>
+          <div class="sets">${ex.sets}</div>
+        </div>
+      </div>
+      <div class="card-desc">${ex.desc}</div>
+    `;
+    grid.appendChild(card);
+  });
+
+  container.appendChild(grid);
+});
+
+document.body.appendChild(container);
+</script>
+
+</body>
+</html>
